@@ -171,7 +171,7 @@ bool mlink::record_incoming_packet(mavlink_message_t &msg)
 
     // Extract the mavlink packet into a buffer
     static uint8_t snapshot_array[263];
-    snapshot_array[0] = 254;
+    snapshot_array[0] = msg.magic;
     snapshot_array[1] = msg.len;
     snapshot_array[2] = msg.seq;
     snapshot_array[3] = msg.sysid;
